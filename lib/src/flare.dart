@@ -28,6 +28,8 @@ class FlareGiffyDialog extends StatelessWidget {
     @required this.flarePath,
     @required this.flareAnimation,
     @required this.title,
+    @required this.percentageHeight,
+    @required this.percentageWidth,
     this.onOkButtonPressed,
     this.flareFit = BoxFit.cover,
     this.onCancelButtonPressed,
@@ -42,7 +44,8 @@ class FlareGiffyDialog extends StatelessWidget {
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
     this.entryAnimation = EntryAnimation.DEFAULT,
-  })  : assert(flarePath != null),
+    
+      })  : assert(flarePath != null),
         assert(title != null),
         assert(flareAnimation != null),
         super(key: key);
@@ -124,6 +127,9 @@ class FlareGiffyDialog extends StatelessWidget {
   /// entrance animation, i.e. slow fade-in in the center of the screen.
   final EntryAnimation entryAnimation;
 
+  final double percentageHeight;
+  final double percentageWidth;
+  
   @override
   Widget build(BuildContext context) {
     final imageWidget = FlareActor(
@@ -147,6 +153,8 @@ class FlareGiffyDialog extends StatelessWidget {
       buttonOkText: buttonOkText,
       onCancelButtonPressed: onCancelButtonPressed,
       entryAnimation: entryAnimation,
+      percentageHeight: percentageHeight,
+      percentageWidth: percentageWidth,
     );
   }
 }

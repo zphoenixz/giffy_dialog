@@ -28,6 +28,8 @@ class AssetGiffyDialog extends StatelessWidget {
     Key key,
     @required this.image,
     @required this.title,
+    @required this.percentageHeight,
+    @required this.percentageWidth,
     this.onOkButtonPressed,
     this.onCancelButtonPressed,
     this.description,
@@ -116,6 +118,9 @@ class AssetGiffyDialog extends StatelessWidget {
   /// entrance animation, i.e. slow fade-in in the center of the screen.
   final EntryAnimation entryAnimation;
 
+  final double percentageHeight;
+  final double percentageWidth;
+
   @override
   Widget build(BuildContext context) {
     return BaseGiffyDialog(
@@ -133,6 +138,8 @@ class AssetGiffyDialog extends StatelessWidget {
       onCancelButtonPressed: onCancelButtonPressed,
       buttonOkText: buttonOkText,
       entryAnimation: entryAnimation,
+      percentageHeight: percentageHeight,
+      percentageWidth: percentageWidth,
     );
   }
 }
