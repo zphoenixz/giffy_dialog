@@ -49,6 +49,8 @@ class BaseGiffyDialog extends StatefulWidget {
     @required this.buttonRadius,
     @required this.entryAnimation,
     @required this.onCancelButtonPressed,
+    @required this.percentageHeight,
+    @required this.percentageWidth,
   }) : super(key: key);
 
   final Widget imageWidget;
@@ -65,6 +67,8 @@ class BaseGiffyDialog extends StatefulWidget {
   final VoidCallback onOkButtonPressed;
   final VoidCallback onCancelButtonPressed;
   final EntryAnimation entryAnimation;
+  final double percentageHeight;
+  final double percentageWidth;
 
   @override
   _BaseGiffyDialogState createState() => _BaseGiffyDialogState();
@@ -247,8 +251,8 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
                 0,
               )
             : null,
-        height: MediaQuery.of(context).size.height * 0.6,
-        width: MediaQuery.of(context).size.width * (isPortrait ? 0.8 : 0.6),
+        height: MediaQuery.of(context).size.height * widget.percentageHeight,
+        width: MediaQuery.of(context).size.width * (isPortrait ? 0.8 : widget.percentageWidth),
         child: Material(
           type: MaterialType.card,
           shape: RoundedRectangleBorder(
